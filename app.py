@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, redirect
 
 app = Flask(__name__)
-
+#DEFAULT NETFLIX TEMPLATE
 @app.route('/')
 def index():
     #create a sub folder named template and move ur template into that folder then only it will work 
